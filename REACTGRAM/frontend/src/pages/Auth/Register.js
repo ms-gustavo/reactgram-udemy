@@ -2,9 +2,13 @@ import "./Auth.css";
 
 //Components
 import { Link } from "react-router-dom";
-
+import Message from "../../components/Message";
 //Hooks
 import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+//Redux
+import { register, reset } from "../../slices/authSlice";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -12,17 +16,26 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const user = {
-    name,
-    email,
-    password,
-    confirmPassword,
-  };
+  const dispatch = useDispatch();
+
+  const { loading, error } = useSelector((state) => state.auth);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const user = {
+      name,
+      email,
+      password,
+      confirmPassword,
+    };
     console.log(user);
+
+    dispatch(register(user));
   };
+  // clean all auth states
+  useEffect(() => {
+    dispatch(reset());
+  }, [dispatch]);
 
   return (
     <div id="register">
@@ -55,7 +68,9 @@ const Register = () => {
           value={confirmPassword || ""}
           autoComplete="off"
         />
-        <input type="submit" value="Cadastrar" />
+        {!loading && <input type="submit" value="Cadastrar" />}
+        {loading && <input type="submit" value="Aguarde..." disabled />}
+        {error && <Message msg={error} type="error" />}
       </form>
       <p>
         Já tem conta? <Link to="/login">Clique aqui.</Link>
