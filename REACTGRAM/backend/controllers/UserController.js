@@ -113,6 +113,7 @@ const update = async (req, res) => {
   if (bio) {
     user.bio = bio;
   }
+  console.log(req.file);
 
   await user.save();
   res.status(200).json(user);
