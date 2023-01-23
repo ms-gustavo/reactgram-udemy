@@ -113,7 +113,6 @@ const update = async (req, res) => {
   if (bio) {
     user.bio = bio;
   }
-  console.log(req.file);
 
   await user.save();
   res.status(200).json(user);
@@ -124,9 +123,7 @@ const update = async (req, res) => {
 const getUserById = async (req, res) => {
   const { id } = req.params;
   try {
-    const user = await User.findById(mongoose.Types.ObjectsId(id)).select(
-      "-password"
-    );
+    const user = await User.findById(id);
     //check if user exists
     if (!user) {
       req.status(404).json({ errors: ["Usuário não encontrado."] });

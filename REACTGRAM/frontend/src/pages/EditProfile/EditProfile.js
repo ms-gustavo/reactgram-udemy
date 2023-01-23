@@ -60,6 +60,7 @@ const EditProfile = () => {
     setTimeout(() => {
       dispatch(resetMessage());
     }, 2000);
+    console.log(userData);
   };
 
   const handleFile = (e) => {
