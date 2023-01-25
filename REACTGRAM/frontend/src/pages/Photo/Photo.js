@@ -4,6 +4,7 @@ import { uploads } from "../../utils/config";
 //components
 import Message from "../../components/Message";
 import { Link } from "react-router-dom";
+import PhotoItem from "../../components/PhotoItem";
 
 // hooks
 import { useParams } from "react-router-dom";
@@ -34,7 +35,11 @@ const Photo = () => {
     return <p>Carregando....</p>;
   }
 
-  return <div>Photo</div>;
+  return (
+    <div id="photo">
+      <PhotoItem photo={photo} />
+    </div>
+  );
 };
 
 export default Photo;

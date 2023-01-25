@@ -80,6 +80,8 @@ export const getPhoto = createAsyncThunk(
     const token = thunkAPI.getState().auth.user.token;
 
     const data = await photoService.getPhoto(id, token);
+
+    return data;
   }
 );
 
