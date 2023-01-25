@@ -37,7 +37,7 @@ const deletePhoto = async (req, res) => {
 
   const reqUser = req.user;
   try {
-    const photo = await Photo.findById(mongoose.Types.ObjectId(id));
+    const photo = await Photo.findById(id);
 
     //check if photos exists
     if (!photo) {
