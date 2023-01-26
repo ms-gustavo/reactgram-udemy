@@ -49,7 +49,7 @@ router.put(
 );
 router.put("/like/:id", authGuard, likePhoto);
 router.put(
-  "/comment/:id",
+  "/comments/:id",
   authGuard,
   commentValidation(),
   validate,
