@@ -87,7 +87,7 @@ const getUserPhotos = async (req, res) => {
 
 const getPhotosById = async (req, res) => {
   const { id } = req.params;
-  const photo = await Photo.findById(mongoose.Types.ObjectId(id));
+  const photo = await Photo.findById(id);
   //Check if photo exists
   if (!photo) {
     res.status(404).json({ errors: [`Foto não encontrada!`] });
@@ -126,24 +126,20 @@ const updatePhoto = async (req, res) => {
 const likePhoto = async (req, res) => {
   const { id } = req.params;
   const reqUser = req.user;
-
   const photo = await Photo.findById(id);
   // check if photo exists
   if (!photo) {
     res.status(404).json({ errors: ["Foto não encontrada"] });
     return;
   }
-
   //check if user already liked the photo
   if (photo.likes.includes(reqUser._id)) {
     res.status(422).json({ errors: [`Você já curtiu a foto.`] });
     return;
   }
-
   // put user id in likes array
   photo.likes.push(reqUser._id);
   photo.save();
-
   res
     .status(200)
     .json({ photoId: id, userId: reqUser._id, message: `A foto foi curtida.` });
