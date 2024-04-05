@@ -1,9 +1,7 @@
 <h1>Clone do Instagram - Backend</h1>
-
     <p>
         Este é o repositório backend do projeto de clone do Instagram. O backend é construído utilizando Node.js e Express.js, com banco de dados MongoDB utilizando o ODM Mongoose. Ele fornece endpoints para gerenciamento de usuários, publicações, comentários, entre outras funcionalidades.
     </p>
-
     <h2>Instalação</h2>
     <ol>
         <li>Clone este repositório para sua máquina local.</li>
@@ -11,7 +9,6 @@
         <li>Execute o seguinte comando para instalar as dependências necessárias:</li>
     </ol>
     <pre><code>npm install</code></pre>
-
     <h2>Como Executar</h2>
     <p>
         Após a instalação das dependências, você pode executar o servidor backend. Utilize o seguinte comando:
@@ -20,7 +17,6 @@
     <p>
         Este comando iniciará o servidor backend utilizando o Nodemon, que monitora alterações nos arquivos e reinicia automaticamente o servidor sempre que houver uma mudança.
     </p>
-
     <h2>Endpoints</h2>
     <p>
         O backend fornece os seguintes endpoints:
@@ -33,14 +29,12 @@
     <p>
         Certifique-se de verificar a documentação dos endpoints para detalhes sobre como utilizá-los.
     </p>
-
     <h2>Scripts Disponíveis</h2>
     <p>No diretório do projeto, você pode executar os seguintes scripts:</p>
     <ul>
         <li><code>npm run server</code> - Inicia o servidor backend.</li>
         <li><code>npm test</code> - Executa os testes do projeto.</li>
     </ul>
-
     <h2>Tecnologias Utilizadas</h2>
     <ul>
         <li>Node.js</li>
@@ -54,7 +48,6 @@
         <li>multer</li>
         <li>Nodemon (para desenvolvimento)</li>
     </ul>
-
     <h2>Contribuindo</h2>
     <p>
         Contribuições são bem-vindas! Para contribuir com o projeto, por favor siga os seguintes passos:
