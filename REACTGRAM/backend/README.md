@@ -24,7 +24,6 @@
     <ul>
         <li><code>/api/users</code>: Endpoints para gerenciamento de usuários.</li>
         <li><code>/api/posts</code>: Endpoints para gerenciamento de publicações.</li>
-        <li><code>/api/comments</code>: Endpoints para gerenciamento de comentários.</li>
     </ul>
     <p>
         Certifique-se de verificar a documentação dos endpoints para detalhes sobre como utilizá-los.
