@@ -1,4 +1,4 @@
-    <h1>Resumo do Projeto Clone do Instagram</h1>
+<h1>Resumo do Projeto Clone do Instagram</h1>
     <p>
         O projeto é um clone do Instagram, desenvolvido com o objetivo de replicar algumas das funcionalidades da popular rede social.
     </p>
